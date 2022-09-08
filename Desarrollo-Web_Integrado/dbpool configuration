@@ -1,0 +1,10 @@
+jboss-cli.sh --connect --controller=localhost:9998
+	//.bat if it's WindowsSO
+
+module add --name=org.postgres.uwin --resources= "/home/sammael/Documentos/DWI-Programas/xtrasJarFiles/postgresql-42.4.0.jar" --dependencies=javax.api,javax.transaction.api 
+	// "C:/.../...." if it's WindowsSO
+
+/subsystem=datasources/jdbc-driver=postgres-uwin:add(driver-name=postgres-uwin, driver-module-name=org.postgres.uwin) 
+
+data-source add --jndi-name=java:/jdbc/dbprueba --name=dbpruebapool --connection-url=jdbc:postgresql://localhost:5432/dbprueba --driver-name=postgres-uwin --user-name=postgres --password=adminadmin 
+	//dbprueba can change to your DBName and password
