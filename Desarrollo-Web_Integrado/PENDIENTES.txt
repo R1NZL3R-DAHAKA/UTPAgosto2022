@@ -1,4 +1,0 @@
-PENDIENTES
-	Instalar Posgresql		100%
-	Instalar PGAdmin		--%
-	Revisar clase s02		100%
